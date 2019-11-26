@@ -1,0 +1,185 @@
+@charset "UTF-8";
+[class*="col-"] {
+  float: left;
+  padding: 5px;
+  width: 100%; }
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+a {
+  text-decoration: none; }
+
+.contenedor {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.loginPnl {
+  border: 1px solid #ff8800;
+  width: 100%; }
+
+.banner {
+  background-color: #ffb200;
+  padding: 5px; }
+  .banner img {
+    width: 100%;
+    height: auto; }
+
+.datos {
+  padding: 15px; }
+  .datos span {
+    font-size: 130%;
+    font-weight: lighter;
+    display: block;
+    text-align: center; }
+
+.datos form {
+  display: flex;
+  flex-direction: column; }
+  .datos form label {
+    font-weight: bold;
+    color: #535353;
+    font-size: 90%; }
+  .datos form input[type="text"],.datos form input[type="password"] {
+    border: 1px solid #999999;
+    border-radius: 5px;
+    padding: 5px; }
+    .datos form input[type="text"]:hover, .datos form input[type="text"]:focus {
+      -webkit-box-shadow: 0px 0px 3px 1px #5ba0d0;
+      -moz-box-shadow: 0px 0px 3px 1px #5ba0d0;
+      box-shadow: 0px 0px 3px 1px #5ba0d0;
+      border: 1px solid #0f3e5a; }
+    .datos form input[type="password"]:hover, .datos form input[type="password"]:focus {
+      -webkit-box-shadow: 0px 0px 3px 1px #5ba0d0;
+      -moz-box-shadow: 0px 0px 3px 1px #5ba0d0;
+      box-shadow: 0px 0px 3px 1px #5ba0d0;
+      border: 1px solid #0f3e5a; }
+  .datos form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #0d547e;
+    border: none;
+    color: white;
+    cursor: pointer; }
+    .datos form input[type="submit"]:hover {
+      background-color: #0f3e5a; }
+
+.mgtop-20 {
+  margin-top: 20px; }
+
+.color1 {
+  color: #43a39f; }
+
+.color2 {
+  color: #999999; }
+
+@media only screen and (min-width: 576px) {
+  /*Small sm incluye tama├▒o de tables*/
+  .col-sm-1 {
+    width: 8.33%; }
+
+  .col-sm-2 {
+    width: 16.66%; }
+
+  .col-sm-3 {
+    width: 25%; }
+
+  .col-sm-4 {
+    width: 33.33%; }
+
+  .col-sm-5 {
+    width: 41.66%; }
+
+  .col-sm-6 {
+    width: 50%; }
+
+  .col-sm-7 {
+    width: 58.33%; }
+
+  .col-sm-8 {
+    width: 66.66%; }
+
+  .col-sm-9 {
+    width: 75%; }
+
+  .col-sm-10 {
+    width: 83.33%; }
+
+  .col-sm-11 {
+    width: 91.66%; }
+
+  .col-sm-12 {
+    width: 100%; }
+
+  .loginPnl {
+    width: 576px;
+    height: 400px; }
+
+  .banner {
+    background-color: #ffb200;
+    height: 100%;
+    display: flex;
+    align-items: center; }
+
+  .datos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; }
+
+  .datos form {
+    width: 200px; } }
+@media only screen and (min-width: 992px) {
+  /*Large lg*/
+  .col-lg-1 {
+    width: 8.33%; }
+
+  .col-lg-2 {
+    width: 16.66%; }
+
+  .col-lg-3 {
+    width: 25%; }
+
+  .col-lg-4 {
+    width: 33.33%; }
+
+  .col-lg-5 {
+    width: 41.66%; }
+
+  .col-lg-6 {
+    width: 50%; }
+
+  .col-lg-7 {
+    width: 58.33%; }
+
+  .col-lg-8 {
+    width: 66.66%; }
+
+  .col-lg-9 {
+    width: 75%; }
+
+  .col-lg-10 {
+    width: 83.33%; }
+
+  .col-lg-11 {
+    width: 91.66%; }
+
+  .col-lg-12 {
+    width: 100%; } }
+
+/*# sourceMappingURL=login.css.map */
