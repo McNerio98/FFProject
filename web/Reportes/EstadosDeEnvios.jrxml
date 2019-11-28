@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="38da494a-25d8-439a-8f9f-93f4d7d93936">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1"/>
+	<queryString>
+		<![CDATA[select a.EstadoEntrega, d.NombreProducto as 'Producto'
+ from EntregaDomicilio a,VentaFactura b, DetalleProductoEnFactura c, producto d 
+ where a.idVentaFactura = b.idVentaFactura and c.idFactura = b.idVentaFactura   
+ and d.idProducto = d.idProducto;]]>
+	</queryString>
+	<field name="EstadoEntrega" class="java.lang.String"/>
+	<field name="Producto" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="170" y="4" width="214" height="70" uuid="c7f84d81-a6e3-4897-ad90-f3803e541ed4"/>
+				<imageExpression><![CDATA["C:\\Users\\David Ayala\\Desktop\\FFProject\\web\\img\\Logo.png"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="27ee744a-430c-4874-8815-dc5aa772c562"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="178" y="7" width="198" height="20" forecolor="#FF9900" uuid="3551b012-b5c3-4b2e-9e78-7d6dc228737d"/>
+				<textElement>
+					<font fontName="Arial Black" size="14"/>
+				</textElement>
+				<text><![CDATA[ESTADO DE PEDIDOS]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="68" y="29" width="100" height="20" uuid="833147f2-9d2f-4053-99fd-23294a0e7551"/>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="23" width="100" height="20" uuid="37738e9f-4ac7-40de-bfda-bcdb82b23c5a"/>
+				<text><![CDATA[EstadoEntrega]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="68" y="0" width="100" height="20" uuid="8506c25d-d81c-4d6c-9fdc-8fe264085159"/>
+				<textFieldExpression><![CDATA[$F{Producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="0" width="100" height="20" uuid="6cbbdfb4-8776-49f9-8bf9-7146d81ec5c0"/>
+				<textFieldExpression><![CDATA[$F{EstadoEntrega}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
