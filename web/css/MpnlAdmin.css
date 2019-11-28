@@ -1,0 +1,133 @@
+@charset "UTF-8";
+.row::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+.tarjeta1 {
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #424250;
+  margin: 5px;
+  border: 1px solid #999999; }
+  .tarjeta1 img {
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+    margin: auto;
+    border: 4px solid goldenrod; }
+  .tarjeta1 #opciones {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 80%;
+    color: #0d547e; }
+    .tarjeta1 #opciones .icon {
+      font-size: 200%; }
+    .tarjeta1 #opciones div a {
+      color: inherit; }
+    .tarjeta1 #opciones div:hover a {
+      color: #333851;
+      cursor: pointer; }
+  .tarjeta1 b {
+    color: #f96c8a; }
+
+.tarjeta1Add {
+  display: flex;
+  height: 328px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  color: #f96c8a;
+  border: 1px solid #999999;
+  padding: 10px;
+  margin: 5px; }
+  .tarjeta1Add:hover {
+    cursor: pointer;
+    color: #0f3e5a;
+    border: 1px solid #0f3e5a; }
+  .tarjeta1Add .icon {
+    font-size: 150%; }
+
+a {
+  text-decoration: none; }
+
+.fieldUser form {
+  width: 100%; }
+  .fieldUser form table {
+    width: 100%; }
+    .fieldUser form table tr {
+      padding: 10px; }
+    .fieldUser form table td.icon {
+      width: 60px;
+      text-align: center;
+      margin: 50px;
+      font-size: 150%;
+      color: #424250;
+      border: 50%; }
+    .fieldUser form table td.in {
+      width: calc(100% - 60px); }
+  .fieldUser form input[type="text"], .fieldUser form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #dddddd;
+    color: #ff8800;
+    border-radius: 5px;
+    margin: 10px 0px;
+    font-size: 105%; }
+.fieldUser .up:hover + .tenue, .fieldUser .tenue:hover {
+  color: #eb4a24; }
+.fieldUser label {
+  cursor: pointer; }
+.fieldUser .preview {
+  width: 100%;
+  margin: auto;
+  border: 1px solid #999999;
+  border-radius: 10px;
+  height: 170px;
+  margin: 5px 0px;
+  text-align: center;
+  padding: 5px; }
+  .fieldUser .preview img {
+    height: 100%;
+    width: auto; }
+.fieldUser input[type="file"] {
+  display: none; }
+.fieldUser .opciones {
+  padding: 5px;
+  text-align: center; }
+  .fieldUser .opciones * {
+    background-color: #0f3e5a;
+    border: 1px solid #0f3e5a;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer; }
+    .fieldUser .opciones *:hover {
+      background-color: #dddddd;
+      color: #0f3e5a; }
+.fieldUser select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid white;
+  margin: 10px 0px; }
+
+@media only screen and (min-width: 576px) {
+  /*Small sm incluye tama├▒o de tables*/
+  .tarjeta1 {
+    width: 200px; }
+    .tarjeta1 img {
+      width: 90%;
+      height: auto; }
+
+  .tarjeta1Add {
+    width: 200px;
+    height: 328px; } }
+@media only screen and (min-width: 992px) {
+  /*Large lg*/ }
+
+/*# sourceMappingURL=MpnlAdmin.css.map */

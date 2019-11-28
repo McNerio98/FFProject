@@ -1,0 +1,174 @@
+@charset "UTF-8";
+table.tblStyle1 {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  color: #0f3e5a; }
+  table.tblStyle1 .imgMarca {
+    width: 120px;
+    height: auto; }
+  table.tblStyle1 tr {
+    border-bottom: 1px solid #21805e; }
+    table.tblStyle1 tr:nth-child(even) {
+      background-color: #f1f2f3; }
+    table.tblStyle1 tr:hover {
+      color: black;
+      background-color: #d6eceb; }
+  table.tblStyle1 td, table.tblStyle1 th {
+    padding: 5px 5px; }
+  table.tblStyle1 th {
+    color: #024959;
+    border-bottom: 2px solid #21805e; }
+  table.tblStyle1 .icon {
+    width: 30px;
+    height: auto; }
+
+table.tblStyle2 {
+  border-collapse: collapse;
+  width: 100%; }
+  table.tblStyle2 label {
+    color: #535353;
+    font-weight: bold; }
+  table.tblStyle2 tr {
+    border-bottom: 1px solid white; }
+  table.tblStyle2 td input[type="text"], table.tblStyle2 td textarea {
+    width: 100%;
+    display: block;
+    background-color: #e3e6eb;
+    border: 1px solid #43a39f;
+    padding: 5px;
+    color: #0f3e5a; }
+  table.tblStyle2 td img {
+    width: 100%;
+    height: auto; }
+
+.hide {
+  display: none; }
+
+.busqueda1 * {
+  margin-top: 5px; }
+.busqueda1 form {
+  text-align: right; }
+  .busqueda1 form * {
+    margin-top: 5px; }
+.busqueda1 input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  background-color: #e3e6eb;
+  border: 1px solid #ff8800; }
+.busqueda1 input[type="submit"] {
+  width: 100%;
+  padding: 5px;
+  background-color: #ff8800;
+  border: 1px solid #ff8800;
+  color: white; }
+  .busqueda1 input[type="submit"]:hover {
+    background-color: #e3e6eb;
+    color: black;
+    cursor: pointer; }
+.busqueda1 a {
+  width: 100%;
+  border: 1px solid #0f3e5a;
+  background-color: #0f3e5a;
+  color: white;
+  padding: 3px;
+  display: block;
+  text-align: center; }
+  .busqueda1 a:hover {
+    background-color: #e3e6eb;
+    color: #0f3e5a; }
+
+.opciones2 * {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #ff8800;
+  border: 1px solid #ff8800;
+  color: white; }
+.opciones2 input[type="button"]:hover, .opciones2 input[type="submit"]:hover {
+  background-color: #e3e6eb;
+  color: #0d547e;
+  cursor: pointer; }
+
+.master1 {
+  color: #0f3e5a; }
+  .master1 a {
+    padding: 5px;
+    margin: 0px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #0f3e5a;
+    float: right;
+    text-align: center;
+    display: none; }
+  .master1 h4 {
+    border-radius: 7px;
+    background-color: #f5d678;
+    margin: 5px 0px;
+    padding: 5px;
+    color: #0f3e5a; }
+  .master1 table {
+    border: 1px solid #43a39f;
+    width: 100%; }
+  .master1 .imgPresentacion {
+    width: 100%; }
+  .master1 textarea {
+    width: 100%; }
+  .master1 input[type="text"], .master1 textarea, .master1 input[type="number"] {
+    border: 1px solid #999999;
+    background-color: #e3e6eb;
+    padding: 5px;
+    color: #bb5136; }
+  .master1 input[type="button"] {
+    border: 1px solid #43a39f;
+    background-color: #e3e6eb;
+    padding: 5px 10px;
+    color: black; }
+    .master1 input[type="button"]:hover {
+      cursor: pointer;
+      background-color: white; }
+
+.opciones {
+  text-align: center; }
+  .opciones input[type="submit"] {
+    font-size: 15px;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    background-color: #43a39f;
+    width: 100px;
+    float: right;
+    margin: 5px;
+    text-align: center; }
+    .opciones input[type="submit"]:hover {
+      cursor: pointer;
+      background-color: #5ba0d0;
+      color: #0f3e5a; }
+
+hr {
+  border: 1px solid #43a39f; }
+
+@media only screen and (min-width: 576px) {
+  /*Small sm incluye tama├▒o de tables*/ }
+@media only screen and (min-width: 992px) {
+  /*Large lg*/
+  table.tblStyle1 .min200 {
+    min-width: 200px; }
+  table.tblStyle1 td, table.tblStyle1 th {
+    padding: 5px 10px; }
+
+  .hide {
+    display: table-cell; }
+
+  .busqueda1 a {
+    width: 150px; }
+  .busqueda1 input[type="text"] {
+    width: 300px; }
+  .busqueda1 input[type="submit"] {
+    width: auto; }
+
+  .master1 .imgPresentacion {
+    width: 200px;
+    height: auto; } }
+
+/*# sourceMappingURL=tableStyles.css.map */
