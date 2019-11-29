@@ -23,14 +23,19 @@ public class Usuario {
     
     @NotNull
     private Integer DUI;
+    
+    @NotNull
+    @FieldName(name="Nombre")
+    private String nombre;
 
     public Usuario() {
     }
 
-    public Usuario(String nombreUsuario, String password, Integer DUI) {
+    public Usuario(String nombreUsuario, String password, Integer DUI, String nombre) {
         this.nombreUsuario = nombreUsuario;
         this.password = password;
         this.DUI = DUI;
+        this.nombre = nombre;
     }
 
     public String getNombreUsuario() {
@@ -55,6 +60,14 @@ public class Usuario {
 
     public void setDUI(Integer DUI) {
         this.DUI = DUI;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     

@@ -1,0 +1,71 @@
+@charset "UTF-8";
+.mgtop-20 {
+  margin-top: 20px; }
+
+.listado1 {
+  list-style: none; }
+  .listado1 li {
+    display: block;
+    float: left;
+    width: 100%; }
+    .listado1 li a {
+      color: #424250;
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      text-align: center;
+      padding: 5px; }
+      .listado1 li a:hover {
+        color: #21805e; }
+  .listado1 li.titulo > a {
+    font-weight: bold; }
+
+.logClient h3 {
+  color: #eb4a24; }
+.logClient form * {
+  display: block;
+  margin: 8px 0px; }
+.logClient form {
+  color: #0d547e;
+  padding: 10px; }
+  .logClient form input[type="submit"] {
+    border: 1px solid white;
+    padding: 10px;
+    background-color: #0f3e5a;
+    color: white;
+    width: 100%; }
+    .logClient form input[type="submit"]:hover {
+      cursor: pointer;
+      border: 1px solid #0f3e5a;
+      background-color: #e3e6eb;
+      color: black; }
+  .logClient form input[type="text"], .logClient form input[type="password"] {
+    border: 2px solid white;
+    padding: 10px;
+    background-color: #dddddd;
+    color: black;
+    width: 100%;
+    border-radius: 10px; }
+  .logClient form a {
+    background-color: #43a39f;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    width: 200px; }
+  .logClient form label {
+    color: #024959; }
+
+@media only screen and (min-width: 576px) {
+  /*Small sm incluye tama├▒o de tables*/
+  .listado1 {
+    width: 100%;
+    list-style: none; }
+    .listado1 li.titulo {
+      width: 50%; } }
+@media only screen and (min-width: 992px) {
+  /*Large lg*/
+  .listado1 {
+    display: flex; } }
+
+/*# sourceMappingURL=estilo2.css.map */

@@ -16,13 +16,6 @@ public class Comprador {
     @PrimaryKey
     private Integer DUI;
     
-    @NotNull
-    @FieldName(name="Nombre")
-    private String nombre;
-    
-    @NotNull
-    @FieldName(name="Apellido")
-    private String apellido;
     
     @NotNull
     @FieldName(name="Telefono")
@@ -31,10 +24,8 @@ public class Comprador {
     public Comprador() {
     }
 
-    public Comprador(Integer DUI, String nombre, String apellido, Integer telefono) {
+    public Comprador(Integer DUI, Integer telefono) {
         this.DUI = DUI;
-        this.nombre = nombre;
-        this.apellido = apellido;
         this.telefono = telefono;
     }
 
@@ -46,22 +37,6 @@ public class Comprador {
         this.DUI = DUI;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
     public Integer getTelefono() {
         return telefono;
     }
@@ -69,6 +44,5 @@ public class Comprador {
     public void setTelefono(Integer telefono) {
         this.telefono = telefono;
     }
-    
     
 }

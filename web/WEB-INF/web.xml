@@ -40,6 +40,18 @@
         <servlet-name>Productos</servlet-name>
         <servlet-class>com.ferreteria.controladores.Productos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Carrito</servlet-name>
+        <servlet-class>com.ferreteria.controladores.Carrito</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Compras</servlet-name>
+        <servlet-class>com.ferreteria.controladores.Compras</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Usuarios</servlet-name>
+        <servlet-class>com.ferreteria.controladores.Usuarios</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletPrincipal</servlet-name>
         <url-pattern>/ServletPrincipal</url-pattern>
@@ -79,6 +91,18 @@
     <servlet-mapping>
         <servlet-name>Productos</servlet-name>
         <url-pattern>/Productos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Carrito</servlet-name>
+        <url-pattern>/Carrito</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Compras</servlet-name>
+        <url-pattern>/Compras</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Usuarios</servlet-name>
+        <url-pattern>/Usuarios</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,12 +5,15 @@
  */
 package com.ferreteria.controladores;
 
+import com.ferreteria.conexion.Conexion;
 import com.ferreteria.conexion.ConexionPool;
+import com.ferreteria.entidad.DetalleProductosEnFactura;
 import com.ferreteria.entidad.Rol;
 import com.ferreteria.operaciones.Operaciones;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,35 +66,52 @@ public class ServletPrueba extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.getWriter().print("Hola");
-        
-        
-        /*
-
-        ArrayList<Rol> RolesDisponibles = new ArrayList<Rol>();
-
+        //response.getWriter().print("Hola");
+/*
         try {
-            RolesDisponibles = obtenerRoles();
-            request.setAttribute("ListaRoles", RolesDisponibles);
-            request.getRequestDispatcher("TestPage.jsp").forward(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(ServletPrueba.class.getName()).log(Level.SEVERE, null, ex);
-            response.sendRedirect("Login");
-        }*/
+            Conexion conn = new ConexionPool();
+            conn.conectar();
+            Operaciones.abrirConexion(conn);
+            Operaciones.iniciarTransaccion();
+
+            
+            response.getWriter().print("Se inserto");
+
+            Operaciones.commit();
+        } catch (Exception ex) {
+            try {
+                Operaciones.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(Compras.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        } finally {
+            try {
+                Operaciones.cerrarConexion();
+            } catch (SQLException ex) {
+                Logger.getLogger(Compras.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+*/
+
+        double monto = 123.11005677;
         
+
+        DecimalFormat df = new DecimalFormat("0.00");
+        String valor = df.format(monto).replaceAll(",","."); //MontoTotal 2
+        response.getWriter().print("El valor es: " + valor);
 
     }
 
     public ArrayList<Rol> obtenerRoles() throws SQLException {
         ArrayList<Rol> roles = new ArrayList<Rol>();
-        
+
         try {
             ConexionPool conn = new ConexionPool();
             conn.conectar();
             Operaciones.abrirConexion(conn);
             Operaciones.iniciarTransaccion();
             roles = Operaciones.getTodos(new Rol());
-            
+
             Operaciones.commit();
             System.out.print("Se realizaron todas las operaciones");
         } catch (Exception ex) {
@@ -105,7 +125,7 @@ public class ServletPrueba extends HttpServlet {
                 System.out.print("Error 2");
             }
         }
-        
+
         return roles;
     }
 
