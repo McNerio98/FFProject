@@ -8,9 +8,11 @@ package com.ferreteria.utilerias;
 import com.ferreteria.conexion.ConexionPool;
 import com.ferreteria.entidad.Administrador;
 import com.ferreteria.entidad.Menu;
+import com.ferreteria.entidad.ProductoAux;
 import com.ferreteria.entidad.Rol;
 import com.ferreteria.operaciones.Operaciones;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +67,26 @@ public class DataList {
 
         return lista;
     }
+    
+    
+    public static String[] getDataFactura(List<ProductoAux> carrito){
+        String[] datos = new String[3];
+        int productos = 0;
+        int unidades = 0;
+        double monto = 0.0;
+        
+        productos = carrito.size(); //Cuantos productos hay en el carrito 
+        
+        for(int i = 0; i<carrito.size(); i++){
+            unidades += carrito.get(i).getUnidades();
+            monto += (carrito.get(i).getPrecioComun() * carrito.get(i).getUnidades());       
+        }
+        datos[0] = String.valueOf(productos); //Totalproductos index 0
+        datos[1] = String.valueOf(unidades); //TotalUnidades index 1
+        DecimalFormat df = new DecimalFormat("0.00");
+        datos[2] = df.format(monto).replaceAll(",","."); //MontoTotal index 2
+        return datos;
+    }     
 
 
 

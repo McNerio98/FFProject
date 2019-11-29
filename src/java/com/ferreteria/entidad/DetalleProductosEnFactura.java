@@ -11,12 +11,13 @@ import com.ferreteria.anotaciones.*;
  *
  * @author A21-PC03
  */
-@Entity(table="DetalleProductosEnFactura")
+@Entity(table="DetalleProductoEnFactura")
 public class DetalleProductosEnFactura {
     @PrimaryKey
     @NotNull
     private Integer idProducto;
     
+    @PrimaryKey
     @NotNull
     private Integer idFactura;
     
@@ -27,9 +28,10 @@ public class DetalleProductosEnFactura {
     public DetalleProductosEnFactura() {
     }
 
-    public DetalleProductosEnFactura(Integer idProducto, Integer idFactura) {
+    public DetalleProductosEnFactura(Integer idProducto, Integer idFactura, Integer numUnidades) {
         this.idProducto = idProducto;
         this.idFactura = idFactura;
+        this.numUnidades = numUnidades;
     }
 
     public Integer getIdProducto() {
@@ -47,6 +49,13 @@ public class DetalleProductosEnFactura {
     public void setIdFactura(Integer idFactura) {
         this.idFactura = idFactura;
     }
-    
+
+    public Integer getNumUnidades() {
+        return numUnidades;
+    }
+
+    public void setNumUnidades(Integer numUnidades) {
+        this.numUnidades = numUnidades;
+    }    
     
 }

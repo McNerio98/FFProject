@@ -1,0 +1,21 @@
+@charset "UTF-8";
+footer {
+  background-color: #282828;
+  color: #e3e6eb; }
+  footer b {
+    color: white; }
+  footer .contenedor {
+    padding: 10px 0px; }
+  footer .pie {
+    padding: 10px;
+    text-align: center;
+    background-color: black; }
+  footer .icon {
+    font-size: 300%; }
+
+@media only screen and (min-width: 576px) {
+  /*Small sm incluye tama├▒o de tables*/ }
+@media only screen and (min-width: 992px) {
+  /*Large lg*/ }
+
+/*# sourceMappingURL=footer.css.map */

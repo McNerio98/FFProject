@@ -8,6 +8,7 @@ package com.ferreteria.entidad;
 import com.ferreteria.anotaciones.*;
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -21,7 +22,7 @@ public class VentaFactura {
     
     @NotNull
     @FieldName(name="FechaVenta")
-    private Date fechaVenta;
+    private Timestamp fechaVenta;
     
     @NotNull
     @FieldName(name="CantidadProductos")
@@ -45,7 +46,7 @@ public class VentaFactura {
     public VentaFactura() {
     }
 
-    public VentaFactura(Integer idVentaFactura, Date fechaVenta, Integer cantidadProductos, BigDecimal totalVenta, BigDecimal totalDescuentos, String formaPago, Integer idCliente) {
+    public VentaFactura(Integer idVentaFactura, Timestamp fechaVenta, Integer cantidadProductos, BigDecimal totalVenta, BigDecimal totalDescuentos, String formaPago, Integer idCliente) {
         this.idVentaFactura = idVentaFactura;
         this.fechaVenta = fechaVenta;
         this.cantidadProductos = cantidadProductos;
@@ -63,11 +64,11 @@ public class VentaFactura {
         this.idVentaFactura = idVentaFactura;
     }
 
-    public Date getFechaVenta() {
+    public Timestamp getFechaVenta() {
         return fechaVenta;
     }
 
-    public void setFechaVenta(Date fechaVenta) {
+    public void setFechaVenta(Timestamp fechaVenta) {
         this.fechaVenta = fechaVenta;
     }
 
