@@ -79,9 +79,9 @@
             <table>
                 <tr>
                     <td class="col-lg-2">Precio Unidad</td>
-                    <td class="col-lg-4">$ <input type="text" name="txtPrecio1" id="txtPrecio1" value="${p.precioComun}"></td>
+                    <td class="col-lg-4">$ <input type="text" name="txtPrecio1" pattern="[0.0-9]+" id="txtPrecio1" value="${p.precioComun}"></td>
                     <td class="col-lg-2">Precio Mayorista</td>
-                    <td class="col-lg-4">$ <input type="text" name="txtPrecio2" id="txtPrecio2" value="${p.precioMayorista}"></td>                                               
+                    <td class="col-lg-4">$ <input type="text" name="txtPrecio2" pattern="[0.0-9]+" id="txtPrecio2" value="${p.precioMayorista}"></td>                                               
                 </tr>
                 <tr>
                     <td colspan="2" class="col-lg-6"></td>
