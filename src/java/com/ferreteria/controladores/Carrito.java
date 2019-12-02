@@ -89,7 +89,7 @@ public class Carrito extends HttpServlet {
                 Logger.getLogger(Carrito.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        request.getRequestDispatcher("TestPage.jsp").forward(request, response);
+        response.sendRedirect("ServletPrincipal?commitAdd=true");
 
     }
 

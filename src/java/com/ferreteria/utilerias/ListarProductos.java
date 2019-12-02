@@ -49,10 +49,12 @@ public class ListarProductos {
                 lista += "<div class='"+ estilo+"'><div class='row'><img src='" + this.getFolderLocation() + rst[5][i] + "'>";
                 lista += "<div class='descripcion'><a href='" + getControlador() + "?id=" + rst[0][i] + "' id='linkage'>";
                 lista += rst[1][i] + "</a><p id='precio'>Precio $<span>" + rst[3][i];
-                lista += "</span></p></div></div><form method='POST' action='"+ getControllerCarrito() +"'><div class='priceForQuantity'><select name='slcCantidad' id='slcCantidad'>";
+                lista += "</span></p></div></div><form method='POST' action='"+ getControllerCarrito() +"'><div class='priceForQuantity'><select name='slcCantidad' class='slcCantidad'>";
                 lista += "<option value='1'>1</option><option value='2'>2</option><option value='3'>3</option>\n"
                             + "<option value='4'>4</option><option value='5'>5</option><option value='6'>6</option>\n"
-                            + "<option value='7'>7</option><option value='0'>+MAS</option></select><span id='price'> $ \n";
+                            + "<option value='7'>7</option><option value='0'>+MAS</option></select> \n"
+                            + "<input id='preciouni' type='hidden' value='"+ rst[3][i] +"'> \n" 
+                            +"<span id='price'> $ \n";
                 lista += rst[3][i] + "</span></div><input type='submit' class='opc' value='+ Agregar al Carrito'>";
                 lista += "<input type='hidden' name='txtIdProducto' id='txtIdProducto' value='"+ rst[0][i]  +"'>";
                 lista += "<a href='Disponibilidad' class='opc border1' id='verificar'>Ver Disponibilidad</a></form>";

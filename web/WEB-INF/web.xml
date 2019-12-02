@@ -52,6 +52,10 @@
         <servlet-name>Usuarios</servlet-name>
         <servlet-class>com.ferreteria.controladores.Usuarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsultarCategorias</servlet-name>
+        <servlet-class>com.ferreteria.controladores.ConsultarCategorias</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletPrincipal</servlet-name>
         <url-pattern>/ServletPrincipal</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>Usuarios</servlet-name>
         <url-pattern>/Usuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultarCategorias</servlet-name>
+        <url-pattern>/ConsultarCategorias</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

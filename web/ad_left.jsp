@@ -7,6 +7,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <% HttpSession sesion = request.getSession(); %>
 
+<%
+    if (request.getSession().getAttribute("Usuario") == null) {
+        response.sendRedirect("Manager");
+    }
+    response.setHeader("Cache-Control", "no-cache");
+    response.setHeader("Cache-Control", "no-store");
+    response.setHeader("Pragma", "no-cache");
+    response.setDateHeader("Expires", 0);
+
+    
+%>
 
 <!DOCTYPE html>
 <html>

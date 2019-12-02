@@ -7,7 +7,8 @@
   .listado1 li {
     display: block;
     float: left;
-    width: 100%; }
+    width: 100%;
+    border-bottom: 1px solid #dddddd; }
     .listado1 li a {
       color: #424250;
       display: block;
@@ -17,6 +18,11 @@
       padding: 5px; }
       .listado1 li a:hover {
         color: #21805e; }
+    .listado1 li span {
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      color: #21805e; }
   .listado1 li.titulo > a {
     font-weight: bold; }
 
@@ -62,7 +68,9 @@
     width: 100%;
     list-style: none; }
     .listado1 li.titulo {
-      width: 50%; } }
+      width: 50%;
+      border-right: 1px solid #43a39f;
+      padding: 10px; } }
 @media only screen and (min-width: 992px) {
   /*Large lg*/
   .listado1 {

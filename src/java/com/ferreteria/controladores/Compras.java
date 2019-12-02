@@ -103,6 +103,8 @@ public class Compras extends HttpServlet {
                         vf = Operaciones.actualizar(vf.getIdVentaFactura(), vf);
 
                         s.removeAttribute("pCarrito");
+                        s.removeAttribute("Cliente");
+                        
                         response.getWriter().print("Se creo la factura Aqui debe mostrar el PDF de la factura");
 
                     }
