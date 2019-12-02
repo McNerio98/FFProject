@@ -20,6 +20,12 @@
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/indexScript1.js"></script>
         <title>:.: Inicio</title>
+    <script>
+            function closeNot(){
+                $('.notificacion1').fadeOut();
+            }    
+    </script>
+    
     </head>
     <body>
         <header class="row">
@@ -72,8 +78,8 @@
                             <div class="icon">
                                 <span><i class="fas fa-shopping-cart"></i></span>
                             </div>
-                            <div class="cantidad">
-                                250
+                            <div class="cantidad" id="cantidad">
+                                0
                             </div>
                         </div>
                     </div>

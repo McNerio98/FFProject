@@ -26,4 +26,32 @@
         <div class="pie"><p> © 2019 Aplicativo Web |Desarrollo de Software|</p></div>        
     </footer>    
 </body>
+
+    <script>
+        $(document).ready(function(){
+            $('.slcCantidad').change(function(e){
+                let unidades = parseInt($(this).val());
+                let padre = $(this).parent();
+                let precio = parseFloat($(padre).children('#preciouni').val());
+                let elemento = $(padre).children('#price');
+                if(unidades != 0){
+                    $(elemento).text("$ " + (unidades * precio).toFixed(2));
+                }else{
+                    $('.notificacion1.registrar').fadeIn();
+                    $(this).val(1);
+                }
+                
+            })
+
+            var insertSatutus = $('#status').val();
+            if(insertSatutus.length != 0){
+                $('.notificacion1.confirmar').css('display','block');
+                setTimeout(closeNot,2000);
+            }
+
+            var numComprados = $('#list').children('div').length;
+            $('#cantidad').text(numComprados);
+        })
+    </script>
+    
 </html>

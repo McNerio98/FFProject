@@ -32,6 +32,7 @@ public class ListarCategorias {
     private String controller;
     private String pageContext;
 
+    //De dos columnas la primera contiene el id de la Categoria y la segunda el nombre
     public ListarCategorias(String[][] cat) {
         this.categorias = cat;
     }
@@ -41,14 +42,16 @@ public class ListarCategorias {
         String[][] cat = this.categorias;
         /*[Columnas][Filas]*/
         int numCat, numSub;
-        int contador = 1;
 
         if (cat != null) {
             lista += "<ul class='listado1 row'>";
             numCat = cat[0].length;
             for (int i = 0; i < numCat; i++) {
                 lista += " <li class='titulo'><span>" + cat[1][i] + "</span>";
+                lista += this.getSubCategorias(Integer.parseInt(cat[0][i]));
+                lista += "</li>";
             }
+            lista += "</ul>";
 
         } else {
             lista += "empty";
@@ -67,7 +70,7 @@ public class ListarCategorias {
 
     private String getSubCategorias(int idCat) {
         String Sub[][] = null;/*Devolvera dos columnas y N Registros*/
-        String lista = null;
+        String lista = "";
 
         try {
             Conexion conn = new ConexionPool();
@@ -83,9 +86,11 @@ public class ListarCategorias {
             if(Sub != null){
                 lista += "<ul>";
                     for(int i=0; i<Sub[0].length; i++){
-                        //Aqui me quede
+                        lista+= "<li><a href='"+ this.pageContext + this.controller+"?idSubCategoria="+Sub[0][i]+"'>"+Sub[1][i]+"</a></li>";
                     }
                 lista += "</ul>";
+            }else{
+                lista += "<ul><li><span>Sin Registrar</span></li></ul>";
             }
 
         } catch (Exception ex) {
@@ -102,7 +107,7 @@ public class ListarCategorias {
             }
         }
 
-        return ""; //Si no hay nada devuelve nulo
+        return lista; 
     }
 
 }

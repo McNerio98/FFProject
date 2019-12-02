@@ -1,8 +1,12 @@
 <%@include file="_top.jsp"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<h3 class="mgtop-20">PRODUCTOS ENCONTRADOS</h3>
+<h3 class="mgtop-20">NUESTRAS CATEGORIAS</h3>
 
-${listado}
+
+<div class="contenedor mgtop-20">
+    ${listaCat}    
+</div>
+
 
 <%@include file="_modalWindows.jsp"%>
 <%@include file="carrito.jsp"%>

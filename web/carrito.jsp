@@ -10,7 +10,7 @@
 
             </div>
         </div>
-        <div class="list">
+        <div class="list" id="list">
 
             <c:if test="${pCarrito != null}">
                 <c:forEach var="iteracion" items="${pCarrito}">

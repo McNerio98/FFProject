@@ -46,6 +46,7 @@ public class Usuarios extends HttpServlet {
         if(accion.equals("invitado")){
             String dui = request.getParameter("txtDUI");
             String tel = request.getParameter("txtTelefono");
+            int duiInt = 0;
             
             try {
                 Conexion conn = new ConexionPool();
@@ -58,13 +59,23 @@ public class Usuarios extends HttpServlet {
                 c = Operaciones.get(Integer.parseInt(dui), new Comprador());
                 
                 
+                
                 if(c.getDUI() == null){
                     c = new Comprador(Integer.parseInt(dui),Integer.parseInt(tel)); //Si no existe se crea uno
+                    duiInt = c.getDUI();
                     c = Operaciones.insertar(c);
                 }
                 
+                c = Operaciones.get(duiInt, new Comprador());
+                if(c.getDUI() != 0){
+                    s.setAttribute("Cliente", c.getDUI().toString()); //Guardara el dui    
+                }else{
+                    response.sendRedirect("ServletPrincipal");
+                }
                 
-                s.setAttribute("Cliente", c.getDUI().toString()); //Guardara el dui
+                
+                
+                
                 List<ProductoAux> carrito = (List<ProductoAux>) s.getAttribute("pCarrito");
                 
                 if(carrito != null){
