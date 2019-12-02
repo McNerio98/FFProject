@@ -19,8 +19,8 @@
                     var marca = row.cells[1].innerHTML;
                     window.opener.setDataMarca(idmarca, marca);
                     window.close();
-                }
+        </div>                }
             </script>
-        </div>
+
     </body>
 </html>

@@ -57,7 +57,7 @@
                     </div>                
                 </c:forEach>
                 <div class="row opciones">
-                    <a href="${pageContext.servletContext.contextPath}/Compras?accion=facturar">Confirmar</a>
+                    <a href="${pageContext.servletContext.contextPath}/Compras?accion=facturar&id=${Cliente}">Confirmar</a>
                     <a href="${pageContext.servletContext.contextPath}">Cancelar</a>
                 </div>                
 

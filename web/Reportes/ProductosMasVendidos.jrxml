@@ -1,29 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD JasperReport//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
-
-<jasperReport name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-    <background>
-        <band/>
-    </background>
-    <title>
-        <band height="79"/>
-    </title>
-    <pageHeader>
-        <band height="35"/>
-    </pageHeader>
-    <columnHeader>
-        <band height="61"/>
-    </columnHeader>
-    <detail>
-        <band height="125"/>
-    </detail>
-    <columnFooter>
-        <band height="45"/>
-    </columnFooter>
-    <pageFooter>
-        <band height="54"/>
-    </pageFooter>
-    <summary>
-        <band height="42"/>
-    </summary>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d417f4ae-7139-4fcc-890c-a6129ba65d59">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idProducto" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+a.idProducto, b.NombreProducto, SUM(a.NumUnidades) AS cantidad
+FROM DetalleProductoEnFactura a, Producto b
+WHERE a.idProducto = b.idProducto
+AND a.idProducto = $P{idProducto}
+GROUP BY a.idProducto, b.NombreProducto
+ORDER BY SUM(a.NumUnidades) DESC;]]>
+	</queryString>
+	<field name="idProducto" class="java.lang.Integer"/>
+	<field name="NombreProducto" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="167" y="0" width="221" height="79" uuid="d0fdde2d-8003-4c0c-86d2-fa10f3371ecd"/>
+				<imageExpression><![CDATA["C:\\Users\\David Ayala\\Desktop\\FFProject\\web\\img\\Logo.png"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="455" y="0" width="100" height="20" forecolor="#FFCC00" uuid="7fface22-420d-46b6-868d-5cbeaa7f0c8b"/>
+				<textElement>
+					<font fontName="Arial Black"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="157" y="7" width="241" height="20" forecolor="#FFCC00" uuid="da9ffc18-d8a4-40bc-b4a6-91d11169c14a"/>
+				<textElement>
+					<font fontName="Arial Black" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Productos Más Vendidos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="209" y="4" width="137" height="20" forecolor="#FFCC00" uuid="b501c9b5-708b-4841-ac65-3c0dc9139c2b"/>
+				<textElement>
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre De Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="4" width="100" height="20" forecolor="#FFCC00" uuid="80a87d88-c6ad-488b-a408-2005a8e1aacc"/>
+				<textElement>
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<text><![CDATA[ID De Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="4" width="145" height="20" forecolor="#FFCC00" uuid="dc2fcf19-9b6a-469c-ad87-c12f7e2a572c"/>
+				<textElement>
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<text><![CDATA[Cantidad De Producto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="0" width="75" height="20" uuid="3cd47995-31dd-4cf0-914d-22a9efd479ef"/>
+				<textFieldExpression><![CDATA[$F{idProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="20" uuid="7cb8f035-79f9-40c8-9b6a-b00e0787d9c9"/>
+				<textFieldExpression><![CDATA[$F{NombreProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="0" width="100" height="20" uuid="b82d03ea-612c-4e82-95a0-5c76ee9310d5"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
 </jasperReport>

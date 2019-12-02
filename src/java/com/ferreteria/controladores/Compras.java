@@ -52,6 +52,9 @@ public class Compras extends HttpServlet {
             }
         } else if (accion.equals("facturar")) {
             //Validar si el carrito no esta vacio y hay un usuario
+            String id = request.getParameter("id");
+            request.setAttribute("op","factura");
+            request.getRequestDispatcher("Reportes").forward(request, response);
             if (carrito != null && (carrito.size() > 0) && cl != null) {
                 
                 DetalleProductosEnFactura df;

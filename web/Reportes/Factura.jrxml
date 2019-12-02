@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2bcaf692-1135-4657-a7b2-d41b3a3fab09">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Identificacion" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT 
+	a.FormaPago,COUNT(b.idFactura) as Factura, SUM(b.NumUnidades) as NumeroProducto, SUM(b.NumUnidades*c.PrecioComun)TotalPago, a.idCliente as IdCliente
+FROM VentaFactura a inner join Comprador d on(d.DUI = a.idCliente), DetalleProductoEnFactura b, Producto c
+WHERE
+	a.idCliente = $P{Identificacion}
+	AND a.idVentaFactura = b.idFactura
+	AND b.idProducto = c.idProducto
+GROUP BY a.FormaPago,a.idCliente
+;]]>
+	</queryString>
+	<field name="FormaPago" class="java.lang.String"/>
+	<field name="Factura" class="java.lang.Integer"/>
+	<field name="NumeroProducto" class="java.lang.Integer"/>
+	<field name="TotalPago" class="java.math.BigDecimal"/>
+	<field name="IdCliente" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="177" y="0" width="221" height="79" uuid="25a9f7d7-0a2e-4c14-bf1e-9a31dd2d912f"/>
+				<imageExpression><![CDATA["C:\\Users\\David Ayala\\Desktop\\FFProject\\web\\img\\Logo.png"]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="455" y="0" width="100" height="20" forecolor="#FFCC00" uuid="6c31edab-a55f-4465-8382-397dadf77047"/>
+				<textElement>
+					<font fontName="Arial Black" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="183" y="17" width="189" height="20" forecolor="#FFCC00" uuid="dbd06270-4807-48a0-8ee9-336f5673eed2"/>
+				<textElement>
+					<font fontName="Arial Black" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura de Productos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="115" height="20" forecolor="#FFCC00" uuid="ba4fee54-00e2-4de7-b5b1-414309763f88"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero de Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="0" width="100" height="20" forecolor="#FFCC00" uuid="515ccee9-6081-4f79-b27b-309fb2f11eb9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Forma de Pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="0" width="136" height="20" forecolor="#FFCC00" uuid="8a63c663-fd83-4686-be50-017269b04a14"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad De Productos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="0" width="100" height="20" forecolor="#FFCC00" uuid="f3083be2-823a-4625-b8e9-95c12323ec14"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total a Pagar]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="5a05d432-3c71-4c44-8306-a356e5038fad"/>
+				<textFieldExpression><![CDATA[$F{TotalPago}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="0" width="100" height="20" uuid="9baa791c-3ecd-4a5c-9a07-2e9910eb57da"/>
+				<textFieldExpression><![CDATA[$F{NumeroProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="cd19850f-8933-44d3-8fc6-8cdfcb5cd680"/>
+				<textFieldExpression><![CDATA[$F{Factura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="0" width="100" height="20" uuid="e6a7ab03-e79e-4356-8e5c-aa136d58a83b"/>
+				<textFieldExpression><![CDATA[$F{FormaPago}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

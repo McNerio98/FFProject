@@ -52,6 +52,14 @@
         <servlet-name>Usuarios</servlet-name>
         <servlet-class>com.ferreteria.controladores.Usuarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Generar Reporte</servlet-name>
+        <servlet-class>com.ferreteria.controladores.Generar Reporte</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Reporte</servlet-name>
+        <servlet-class>com.ferreteria.reportes.Reporte</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletPrincipal</servlet-name>
         <url-pattern>/ServletPrincipal</url-pattern>
@@ -103,6 +111,14 @@
     <servlet-mapping>
         <servlet-name>Usuarios</servlet-name>
         <url-pattern>/Usuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Generar Reporte</servlet-name>
+        <url-pattern>/Generar Reporte</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Reporte</servlet-name>
+        <url-pattern>/Reporte</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
